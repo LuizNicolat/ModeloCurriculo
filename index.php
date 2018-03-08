@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="The Curriculum Vitae"/>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 
 <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
 
@@ -18,15 +18,15 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous">
-</script>   
+</script>
 
-    
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+
 <link type="text/css" rel="stylesheet" href="style.css">
 <link type="text/css" rel="stylesheet" href="stylebotaoflutuante.css">
-    
+
 <script src="./js/scripts.js"></script>
 
 
@@ -51,11 +51,26 @@
                     <li>Estado Civil</li>
             </ul>
         </div>
-    </div>    
-    <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
-        <hr class="style1">        
     </div>
-    
+
+    <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <hr class="style1">
+    </div>
+<!-- Topico dos objetivos -->
+    <div class="carregaobjetivo">
+        <div class="formatfonte container col-md-4 col-xs-12 col-sm-12 col-lg-4"><h3>Objetivo</h3></div>
+        <div class="formatfonte container col-md-8 col-xs-12 col-sm-12 col-lg-8">
+            <ul>
+                    <li class="empregador">Ferramentas de desenvolvimento</li>
+                    <li>A certificação de metodologias que nos auxiliam a lidar com a competitividade nas transações comerciais afeta positivamente a correta previsão das condições financeiras e administrativas exigidas.</li>
+                    <li>Avançado</li>
+                </ul>
+        </div>
+    </div>
+    <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
+        <hr class="style1">
+    </div>
+<!-- Topico da formação -->
     <div class="carregaformacao">
         <div class="formatfonte container col-md-4 col-xs-12 col-sm-12 col-lg-4"><h3>Formação</h3></div>
         <div class="formatfonte container col-md-8 col-xs-12 col-sm-12 col-lg-8">
@@ -64,11 +79,12 @@
                     <li>A certificação de metodologias que nos auxiliam a lidar com a competitividade nas transações comerciais afeta positivamente a correta previsão das condições financeiras e administrativas exigidas.</li>
                     <li>Avançado</li>
                 </ul>
-        </div> 
+        </div>
     </div>
     <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
-        <hr class="style1">        
+        <hr class="style1">
     </div>
+<!-- Topico dos conhecimentos -->
     <div class="carregaconhecimentos">
         <div class="formatfonte container col-md-4 col-xs-12 col-sm-12 col-lg-4"><h3>Conhecimentos</h3></div>
         <div class="formatfonte container col-md-8 col-xs-12 col-sm-12 col-lg-8">
@@ -90,8 +106,9 @@
         </div>
     </div>
     <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
-        <hr class="style1">        
+        <hr class="style1">
     </div>
+<!-- Topico das Experiências -->
     <div class="carregaexperiencia">
         <div class="formatfonte container col-md-4 col-xs-12 col-sm-12 col-lg-4"><h3>Experiências</h3></div>
         <div class="formatfonte container col-md-8 col-xs-12 col-sm-12 col-lg-8">
@@ -100,7 +117,7 @@
                     <li>A certificação de metodologias que nos auxiliam a lidar com a competitividade nas transações comerciais afeta positivamente a correta previsão das condições financeiras e administrativas exigidas.</li>
                     <li>Analista</li>
                     <li>01/01/2014 - Presente</li>
-                </ul>            
+                </ul>
                 <ul>
                     <li class="empregador">Empresa 2</li>
                     <li>A certificação de metodologias que nos auxiliam a lidar com a competitividade nas transações comerciais afeta positivamente a correta previsão das condições financeiras e administrativas exigidas.</li>
