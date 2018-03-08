@@ -10,6 +10,7 @@ body{
     margin-top: 10px;
     border-radius: 5px;
     background-color: #fcf8e3;
+    padding-bottom: 20px;
 /*    display: none;*/
 }
 
@@ -51,11 +52,19 @@ hr.style1{
     font-weight:bold;
 }
 
+ul.listadados{
+  list-style:none;
+}
+
 /* CSS dos dados de empresa */
 li.empregador{
     font-size: 20px;
     list-style: none;
     margin-left: -17px;
+}
+
+li.justifica{
+  text-align: justify;
 }
 
 .carregatopo,.carregaformacao,.carregaexperiencia,.carregaconhecimentos{

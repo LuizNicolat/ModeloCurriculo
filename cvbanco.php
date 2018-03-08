@@ -1,3 +1,8 @@
+<?php require_once 'config.php'; ?>
+<?php include('inc/functions.php'); ?>
+<?php include('inc/database.php'); ?>
+<?php $db = open_database(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +29,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<link type="text/css" rel="stylesheet" href="./css/style.css">
-<link type="text/css" rel="stylesheet" href="./css/stylebotaoflutuante.css">
+<link type="text/css" rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="stylebotaoflutuante.css">
 
 <script src="./js/scripts.js"></script>
 
