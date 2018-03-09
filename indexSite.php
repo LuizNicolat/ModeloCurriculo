@@ -41,6 +41,17 @@
         </div>
       </div>
     </nav>
+    <form>
+    <div class="form-group col-md-6 col-xs-12 col-lg-6">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome">        
+    </div>
+    <div class="form-group col-md-6 col-xs-12 col-lg-6">
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome" placeholder="sobrenome">
+    </div>
+    
+</form>  
   </div>
 </body>
 </html>
