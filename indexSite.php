@@ -41,39 +41,47 @@
         </div>
       </div>
     </nav>
+    <!-- Inicio da pagina -->
     <form>
-    <div class="form-group col-md-6 col-xs-12 col-lg-6">
-        <label for="nome">Nome</label>
-        <input type="text" class="form-control" id="nome" placeholder="Nome">        
-    </div>
-    <div class="form-group col-md-6 col-xs-12 col-lg-6">
-        <label for="sobrenome">Sobrenome</label>
-        <input type="text" class="form-control" id="sobrenome" placeholder="sobrenome">
-    </div>
-    
-    <div class="form-group col-md-6 col-xs-12 col-lg-6">
-        <div class="container">
-  <br />
-  <div class="row">
-    <div class='col-sm-3'>
-      <div class="form-group">
-        <div id="filterDate2">
-          
-          <!-- Datepicker as text field -->         
-          <div class="input-group date" data-date-format="dd.mm.yyyy">
-            <input  type="text" class="form-control" placeholder="dd.mm.yyyy">
-            <div class="input-group-addon" >
-              <span class="glyphicon glyphicon-th"></span>
-            </div>
-          </div>
-          
-        </div>    
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-</form>  
+        <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <h4>Dados Pessoais</h4>
+        </div>
+
+        <div class="form-group col-md-4 col-xs-12 col-lg-4">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome">
+        </div>
+        <div class="form-group col-md-4 col-xs-12 col-lg-4">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" class="form-control" id="sobrenome" placeholder="sobrenome">
+        </div>
+        <div class="form-group col-md-4 col-xs-12 col-lg-4">
+            <label for="dtnasc">Nascimento</label>
+            <input type="text" class="form-control" id="dtnasc" placeholder="01/01/1999">
+        </div>
+
+        <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <hr class="style1">
+        </div>
+
+        <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <h4>Objetivo</h4>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 col-lg-12">
+          <textarea class="form-control" rows="5" id="comment" placeholder="Conte aqui o que você deseja alcançar, seu objetivo profissional."></textarea>
+        </div>
+
+        <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <hr class="style1">
+        </div>
+
+        <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <h4>Formação</h4>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 col-lg-12">
+          <textarea class="form-control" rows="5" id="comment" placeholder="Conte aqui o que você deseja alcançar, seu objetivo profissional."></textarea>
+        </div>
+    </form>
   </div>
 </body>
 </html>
