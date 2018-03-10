@@ -47,6 +47,12 @@
             <h4>Dados Pessoais</h4>
         </div>
 
+        <div class="form-group disabled col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="row col-md-4 col-xs-12 col-lg-4">
+              <label for="codigo">Código</label>
+              <input type="text" class="form-control container-fluid" id="codigo" placeholder="01111111">
+            </div>
+        </div>
         <div class="form-group col-md-4 col-xs-12 col-lg-4">
             <label for="nome">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Nome">
@@ -78,8 +84,40 @@
         <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <h4>Formação</h4>
         </div>
+        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <label for="nomecurso">Nome do Curso</label>
+            <input type="text" class="form-control" id="nomecurso" placeholder="Nome do curso">
+        </div>
+        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <label for="instituicao">Nome da Instituição</label>
+            <input type="text" class="form-control" id="instituicao" placeholder="Nome da Instituição">
+        </div>
+        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <label for="selectform">Tipo de Curso</label>
+            <select class="form-control" id="selectform">
+              <option>Selecione...</option>
+              <option>Graduação</option>
+              <option>Bacharelado</option>
+              <option>Licenciatura</option>
+              <option>Pós-Graduação</option>
+              <option>Mestrado</option>
+              <option>Doutorado</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <label for="grupobotao">Situação</label>
+              <div class="btn-group" data-toggle="buttons" id="grupobotao">
+                      <label class="btn btn-default">
+                          <input type="radio" id="q156" name="quality[25]" value="1" /> Cursando
+                      </label>
+                      <label class="btn btn-default">
+                          <input type="radio" id="q157" name="quality[25]" value="2" /> Concluído
+                      </label>
+              </div>
+        </div>
         <div class="form-group col-md-12 col-xs-12 col-lg-12">
-          <textarea class="form-control" rows="5" id="comment" placeholder="Conte aqui o que você deseja alcançar, seu objetivo profissional."></textarea>
+            <label for="textoforma">Descrição da Formação</label>
+            <textarea class="form-control" rows="5" id="textoforma" placeholder="Descreva os assuntos abordados durante a formação."></textarea>
         </div>
     </form>
   </div>
