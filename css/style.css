@@ -70,3 +70,8 @@ li.justifica{
 .carregatopo,.carregaformacao,.carregaexperiencia,.carregaconhecimentos{
     display: none;
 }
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
