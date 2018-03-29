@@ -29,6 +29,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./js/tradPTBR.js"></script>
     <script src="./js/scriptsindexsite.js"></script>
+    <script src="./js/buscacep.js"></script>
+    
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -60,6 +62,9 @@
         <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
           <div >
             <label for="imgcv">Foto do Currículo</label>
+              <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                <img src="./res/nopicture.png" alt="Avatar" class="avatar">   
+              </div>
             <input type="file" name="img[]" class="file" id="imgcv">
             <div class="input-group col-xs-12">
               <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
@@ -84,6 +89,43 @@
             <input type="text" class="form-control" id="datepicker">
         </div>
 
+<!--        Dados do endereço-->
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="cep">CEP</label>
+            <div class="input-group">                
+                <input type="text" id="cep" class="form-control" name="cep" placeholder="Clique para pesquisar ->">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" name="buscacep"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                  </span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="rua" name="logradouro" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="localidade">Localidade</label>
+            <input type="text" id="cidade" name="localidade" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="UF">UF</label>
+            <input type="text" id="uf" name="UF" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="IBGE">IBGE</label>
+            <input type="text" id="ibge" name="IBGE" class="form-control" />
+        </div>
+        <div class="col-xs-12 col-sm-4 form-group">
+            <label for="numero">Número</label>
+            <input type="text" id="ibge" name="numero" class="form-control" />
+        </div>
+        
+<!--        Fim Dados do endereço-->
+        
         <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <hr class="style1">
         </div>

@@ -35,14 +35,20 @@ jQuery(document).ready(function () {
       $('#formacao1').after(clonedDiv);
         iCnt = iCnt+1;
     });
+    
+//    jQuery('#imgcv').change( function(event) {
+//var tmppath = URL.createObjectURL(event.target.files[0]);
+//    jQuery(".avatar").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));    
+//});
 
-    jQuery(document).on('click', '.browse', function(){
-      var file = jQuery(this).parent().parent().parent().find('.file');
-      file.trigger('click');
-    });
-    jQuery(document).on('change', '.file', function(){
-      jQuery(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
-    });
+//    jQuery(document).on('click', '.browse', function(){
+//      var file = jQuery(this).parent().parent().parent().find('.file');
+//      file.trigger('click');
+//    });
+//    jQuery(document).on('change', '.file', function(){
+//      jQuery(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+//        $('.avatar').attr('src', file);
+//    });
 
     // var iCnt = 2;
     // $( "#target" ).click(function() {
