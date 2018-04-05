@@ -1,19 +1,19 @@
 <?php
 /** O nome do banco de dados*/
-define('DB_NAME', 'gestorcv');
+define('DB_NAME', 'sql10230473');
 /** Usuário do banco de dados MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'sql10230473');
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', 'vertrigo');
+define('DB_PASSWORD', 'L7p73ZjLyh');
 /** nome do host do MySQL */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'sql10.freemysqlhosting.net');
 /** caminho absoluto para a pasta do sistema **/
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** caminho no server para o sistema **/
 if ( !defined('BASEURL') )
-	define('BASEURL', '/crud/');
+	define('BASEURL', '/modelocurriculo/');
 
 /** caminho do arquivo de banco de dados **/
 if ( !defined('DBAPI') )

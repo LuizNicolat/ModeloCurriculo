@@ -1,3 +1,7 @@
+<?php include('../config.php'); ?>
+<?php include('../inc/functions.php'); ?>
+<?php include('../inc/database.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
