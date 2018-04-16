@@ -90,24 +90,24 @@
         </div>
 
 <!--        Dados do endereço-->
-        <!-- <div class="col-xs-12 col-sm-4 form-group">
+        <div class="col-xs-12 col-sm-4 form-group">
             <label for="cep">CEP</label>
             <div class="input-group-btn">
                 <input type="text" id="cep" class="form-control" name="cep" placeholder="Clique para pesquisar ->">
-                <span class="input-group-btn">
+                <span >
                     <button class="btn btn-secondary" type="button" name="buscacep"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
                   </span>
             </div>
-        </div> -->
-        <div class="col-xs-12 col-sm-4 form-group">
+        </div>
+        <!-- <div class="col-xs-12 col-sm-4 form-group">
           <label for="cep">CEP</label>
-            <div class="input-group">              
+            <div class="input-group">
               <input type="text" class="form-control" name="cep">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Go!</button>
               </span>
             </div>
-        </div>
+        </div> -->
 
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="logradouro">Logradouro</label>
@@ -131,8 +131,15 @@
         </div>
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="numero">Número</label>
-            <input type="text" id="ibge" name="numero" class="form-control" />
+            <input type="text" id="numero" name="numero" class="form-control" />
         </div>
+
+        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="row col-md-4 col-xs-12 col-lg-4">
+            <input type="button" class="btn btn-default" value="Salvar Usuário" id="insertUser">
+            </div>
+        </div>
+
 
 <!--        Fim Dados do endereço-->
 
