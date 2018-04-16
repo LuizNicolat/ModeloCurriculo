@@ -1,4 +1,6 @@
 <?php
+include "../config.php";
+
 function open_database() {
         try {
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

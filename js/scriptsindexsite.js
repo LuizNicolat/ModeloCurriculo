@@ -35,10 +35,37 @@ jQuery(document).ready(function () {
       $('#formacao1').after(clonedDiv);
         iCnt = iCnt+1;
     });
-    
+
+
+    jQuery( "#insertUser" ).click(function() {
+      $(function(){
+        var nome = jQuery('#nome').val();
+        var sobrenome = jQuery('#sobrenome').val();
+        var nascimento = jQuery('#datepicker').val();
+        var cep = jQuery('#cep').val();
+        var logradouro = jQuery('#rua').val();
+        var bairro = jQuery('#bairro').val();
+        var localidade = jQuery('#cidade').val();
+        var uf = jQuery('#uf').val();
+        var ibge = jQuery('#ibge').val();
+        var numero = jQuery('#numero').val();
+
+        jQuery.ajax({
+            type: "POST",
+            url: "inc/functions.php?a=inserir",
+            data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+ cep+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
+            success: function(mensagem){
+              alert(mensagem);
+            }
+        });
+        //alert(localidade );
+        alert(nome + ' ' +sobrenome + ' ' + nascimento + ' ' + cep + ' ' + logradouro + ' ' + bairro + ' ' + localidade + ' ' + uf + ' ' + ibge + ' ' + numero );
+      });
+
+    });
 //    jQuery('#imgcv').change( function(event) {
 //var tmppath = URL.createObjectURL(event.target.files[0]);
-//    jQuery(".avatar").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));    
+//    jQuery(".avatar").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
 //});
 
 //    jQuery(document).on('click', '.browse', function(){
