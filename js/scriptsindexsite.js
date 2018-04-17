@@ -55,11 +55,15 @@ jQuery(document).ready(function () {
             url: "inc/functions.php?a=inserir",
             data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+ cep+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
             success: function(mensagem){
-              alert(mensagem);
+              $('#slide').popup({
+                outline: true, // optional
+                focusdelay: 400, // optional
+                vertical: 'top' //optional
+              });
             }
         });
         //alert(localidade );
-        alert(nome + ' ' +sobrenome + ' ' + nascimento + ' ' + cep + ' ' + logradouro + ' ' + bairro + ' ' + localidade + ' ' + uf + ' ' + ibge + ' ' + numero );
+        //alert(nome + ' ' +sobrenome + ' ' + nascimento + ' ' + cep + ' ' + logradouro + ' ' + bairro + ' ' + localidade + ' ' + uf + ' ' + ibge + ' ' + numero );
       });
 
     });

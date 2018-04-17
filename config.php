@@ -1,12 +1,12 @@
 <?php
 /** O nome do banco de dados*/
-define('DB_NAME', 'sql10230473');
+define('DB_NAME', 'gestorcv');
 /** Usuário do banco de dados MySQL */
-define('DB_USER', 'sql10230473');
+define('DB_USER', 'root');
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', 'L7p73ZjLyh');
+define('DB_PASSWORD', 'vertrigo');
 /** nome do host do MySQL */
-define('DB_HOST', 'sql10.freemysqlhosting.net');
+define('DB_HOST', 'localhost');
 /** caminho absoluto para a pasta do sistema **/
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');

@@ -1,7 +1,3 @@
-<?php include('../config.php'); ?>
-<?php include('../inc/functions.php'); ?>
-<?php include('../inc/database.php'); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +30,7 @@
     <script src="./js/tradPTBR.js"></script>
     <script src="./js/scriptsindexsite.js"></script>
     <script src="./js/buscacep.js"></script>
+    <script src="./js/popupOverlay.js"></script>
 
 
 <!-- Latest compiled and minified JavaScript -->
@@ -53,6 +50,8 @@
     </nav>
     <!-- Inicio da pagina -->
     <form>
+        <div id="slide"></div>
+
         <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <h4>Dados Pessoais</h4>
         </div>
