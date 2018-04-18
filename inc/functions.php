@@ -25,9 +25,9 @@ if ($action == 'inserir') {
 
   $sql = "INSERT INTO usuarios (nome,sobrenome,nascimento,cep,logradouro,bairro,localidade,uf,ibge,numero) VALUES ('$nome','$sobrenome','$nascimento','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero')";
 if(mysqli_query($conn, $sql)){
-    echo "Records inserted successfully.";
+    echo 1;
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
   //
   // $stmt = $conn->prepare("insert into usuarios values(?,?,?,?,?,?,?,?,?,?)");

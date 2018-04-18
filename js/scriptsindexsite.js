@@ -55,17 +55,29 @@ jQuery(document).ready(function () {
             url: "inc/functions.php?a=inserir",
             data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+ cep+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
             success: function(mensagem){
-              $('#slide').popup({
-                outline: true, // optional
-                focusdelay: 400, // optional
-                vertical: 'top' //optional
-              });
+              if (mensagem == 1) {
+                $(mensagem).appendTo('#Content');
+
+                $('#slide').popup({
+                  outline: true, // optional
+                  focusdelay: 400, // optional
+                  vertical: 'top' //optional
+                });
+              }
+
             }
         });
         //alert(localidade );
         //alert(nome + ' ' +sobrenome + ' ' + nascimento + ' ' + cep + ' ' + logradouro + ' ' + bairro + ' ' + localidade + ' ' + uf + ' ' + ibge + ' ' + numero );
       });
 
+    });
+
+    jQuery( "#testapopup" ).click(function() {
+      $("slide").overhang({
+      type: "success",
+      message: "Inserido com sucesso!"
+      });
     });
 //    jQuery('#imgcv').change( function(event) {
 //var tmppath = URL.createObjectURL(event.target.files[0]);
