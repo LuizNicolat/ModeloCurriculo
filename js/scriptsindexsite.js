@@ -56,12 +56,18 @@ jQuery(document).ready(function () {
             data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+ cep+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
             success: function(mensagem){
               if (mensagem == 1) {
-                $(mensagem).appendTo('#Content');
-
-                $('#slide').popup({
-                  outline: true, // optional
-                  focusdelay: 400, // optional
-                  vertical: 'top' //optional
+                $("body").overhang({
+                  type: "success",
+                  message: "Cadastrado com sucesso.",
+                  closeConfirm: "true",
+                  duration: 3
+                });
+              } else {
+                $("body").overhang({
+                type: "error",
+                message: "Erro ao cadastrar, entre em contato com o suporte.",
+                closeConfirm: "true",
+                duration: 3
                 });
               }
 
@@ -74,10 +80,7 @@ jQuery(document).ready(function () {
     });
 
     jQuery( "#testapopup" ).click(function() {
-      $("slide").overhang({
-      type: "success",
-      message: "Inserido com sucesso!"
-      });
+
     });
 //    jQuery('#imgcv').change( function(event) {
 //var tmppath = URL.createObjectURL(event.target.files[0]);
