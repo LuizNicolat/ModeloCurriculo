@@ -3,7 +3,7 @@ $(document).ready(function() {
             //capturando o clique no botao
         jQuery('button[name="buscacep"]').click(function(){
 
-            $( "#numero" ).focus();
+            jQuery( "#numero" ).focus();
 
             function limpa_formulário_cep() {
                 // Limpa valores do formulário de cep.

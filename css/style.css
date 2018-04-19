@@ -76,4 +76,12 @@ li.justifica{
   position: absolute;
 }
 
-/*CSS do popup*/
+/*CSS da barra do cadastro*/
+li#limenu{
+  color: #ffffff;
+}
+
+.dadosobjetivo{
+  display: none;
+  text-decoration: none;
+}

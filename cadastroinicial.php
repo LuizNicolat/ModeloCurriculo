@@ -40,16 +40,22 @@
 </head>
 <body id="top container-fluid">
   <div class="wrap container">
-        <nav class="navbar-custom navbar row">
+    <!-- Barra do topo -->
+    <nav class="navbar-custom navbar row">
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="#">
-            <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-          </a>
-        </div>
-      </div>
+                <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
+              </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="limenu menuobj"><a href="#">Objetivos</a></li>
+                <li class="limenu"><a href="#">Formação</a></li>
+            </ul>
+          </div>
     </nav>
     <!-- Inicio da pagina -->
+    <div class="dadospessoais">
     <form>
         <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <h4>Dados Pessoais</h4>
@@ -61,7 +67,9 @@
               <input type="text" class="form-control container-fluid" id="codigo" placeholder="01111111" disabled>
             </div>
         </div> -->
-        <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+
+        <!-- Parte do upload de foto -->
+        <!-- <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
           <div >
             <label for="imgcv">Foto do Currículo</label>
               <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
@@ -77,7 +85,8 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
+        
         <div class="form-group col-md-4 col-xs-12 col-lg-4">
             <label for="nome">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Nome">
@@ -168,6 +177,19 @@
                 <input type="button" class="btn btn-default" value="Cadastrar" id="insertUser">
             </div>
         </div>
+      </div>
+
+      <div class="dadosobjetivo">
+          <div class="formatfonte container col-md-4 col-xs-12 col-sm-12 col-lg-4"><h3>Objetivo</h3></div>
+          <div class="form-group col-md-12 col-xs-12 col-lg-12">
+            <textarea class="form-control" rows="5" id="comment" placeholder="Conte aqui o que você deseja alcançar, seu objetivo profissional."></textarea>
+          </div>
+          <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
+              <div class="row col-md-4 col-xs-12 col-lg-4">
+                  <input type="button" class="btn btn-default" value="Cadastrar" id="insertUser">
+              </div>
+          </div>
+      </div>
   </div>
 </body>
 </html>

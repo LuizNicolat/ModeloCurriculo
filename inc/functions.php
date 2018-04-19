@@ -27,14 +27,11 @@ if ($action == 'inserir') {
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
 
-    $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero')";
+  $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero,usuario,senha) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero','$usuario','$senha')";
   if(mysqli_query($conn, $sql)){
       echo 1;
-      $sqlcodigouser = "SELECT id from dados_cadastrais where cpf='$cpf'";
-      $codigodouser = mysqli_query($conn, $sqlcodigouser);
-        $sql2 = "INSERT INTO usuario (idusuario,nomeuser, senha) VALUES ('$codigodouser','$usuario','$senha')";
   } else{
-      echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+      echo 0 + ":" + mysql_error();//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
 }
 else if ($action == 'verificauser') {
@@ -49,7 +46,7 @@ else if ($action == 'verificauser') {
              }
             else
             {
-              echo 0;
+              echo 0 "-" + mysqli_error();
             }
 }
 
