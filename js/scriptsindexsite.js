@@ -43,6 +43,7 @@ jQuery(document).ready(function () {
         var sobrenome = jQuery('#sobrenome').val();
         var nascimento = jQuery('#datepicker').val();
         var cep = jQuery('#cep').val();
+        var cpf = jQuery('#cpf').val();
         var logradouro = jQuery('#rua').val();
         var bairro = jQuery('#bairro').val();
         var localidade = jQuery('#cidade').val();
@@ -53,7 +54,7 @@ jQuery(document).ready(function () {
         jQuery.ajax({
             type: "POST",
             url: "inc/functions.php?a=inserir",
-            data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+ cep+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
+            data: "nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+cep+"&cpf="+cpf+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero,
             success: function(mensagem){
               if (mensagem == 1) {
                 $("body").overhang({
@@ -81,6 +82,27 @@ jQuery(document).ready(function () {
 
     jQuery( "#testapopup" ).click(function() {
 
+    });
+
+    $( "#usuario" ).blur(function() {
+      var textouser = jQuery(this).val();
+      if( textouser != '') {
+        jQuery.ajax({
+          type: "POST",
+          url: "inc/functions.php?a=verificauser",
+          data: "usuario="+textouser,
+          success: function(mensagem){
+            if (mensagem == 1) {
+              $("body").overhang({
+                type: "error",
+                message: "Usuario já existe",
+                closeConfirm: "true",
+                duration: 3
+              });
+            }
+          }
+        });
+      }
     });
 //    jQuery('#imgcv').change( function(event) {
 //var tmppath = URL.createObjectURL(event.target.files[0]);
