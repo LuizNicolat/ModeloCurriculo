@@ -57,6 +57,27 @@
     <!-- Inicio da pagina -->
     <div class="dadospessoais">
     <form>
+      <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
+          <h4>Dados de usuário</h4>
+      </div>
+
+      <div class="col-xs-12 col-sm-4 form-group">
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" name="usuario" class="form-control" />
+      </div>
+      <div class="col-xs-12 col-sm-4 form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" class="form-control" />
+      </div>
+      <div class="col-xs-12 col-sm-4 form-group">
+          <label for="confsenha">Repita a senha</label>
+          <input type="password" id="confsenha" name="confsenha" class="form-control" />
+      </div>
+
+      <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <hr class="style1">
+      </div>
+
         <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <h4>Dados Pessoais</h4>
         </div>
@@ -86,7 +107,7 @@
           </div>
 
         </div> -->
-        
+
         <div class="form-group col-md-4 col-xs-12 col-lg-4">
             <label for="nome">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Nome">
@@ -104,7 +125,7 @@
             <input type="text" class="form-control" id="datepicker">
         </div>
 
-<!--        Dados do endereço-->
+<!--        Inicio CEP -->
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="cep">CEP</label>
             <div class="input-group">
@@ -114,15 +135,8 @@
                   </span>
             </div>
         </div>
-        <!-- <div class="col-xs-12 col-sm-4 form-group">
-          <label for="cep">CEP</label>
-            <div class="input-group">
-              <input type="text" class="form-control" name="cep">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div>
-        </div> -->
+
+        <!-- Fim do CEP -->
 
         <div class="col-xs-12 col-sm-4 form-group">
             <label for="logradouro">Logradouro</label>
@@ -151,27 +165,6 @@
 
 <!--        Fim Dados do endereço-->
 
-        <div class="separador container col-md-12 col-xs-12 col-sm-12 col-lg-12">
-            <hr class="style1">
-        </div>
-
-        <div class="container formatfonte col-md-12 col-xs-12 col-sm-12 col-lg-12">
-            <h4>Dados de usuário</h4>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 form-group">
-            <label for="logradouro">Usuário</label>
-            <input type="text" id="usuario" name="usuario" class="form-control" />
-        </div>
-        <div class="col-xs-12 col-sm-4 form-group">
-            <label for="bairro">Senha</label>
-            <input type="text" id="senha" name="senha" class="form-control" />
-        </div>
-        <div class="col-xs-12 col-sm-4 form-group">
-            <label for="localidade">Repita a senha</label>
-            <input type="text" id="confsenha" name="confsenha" class="form-control" />
-        </div>
-
         <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <div class="row col-md-4 col-xs-12 col-lg-4">
                 <input type="button" class="btn btn-default" value="Cadastrar" id="insertUser">
@@ -186,7 +179,7 @@
           </div>
           <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
               <div class="row col-md-4 col-xs-12 col-lg-4">
-                  <input type="button" class="btn btn-default" value="Cadastrar" id="insertUser">
+                  <input type="button" class="btn btn-default" value="Cadastrar" id="insertobjective">
               </div>
           </div>
       </div>

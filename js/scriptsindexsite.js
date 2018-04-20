@@ -1,5 +1,6 @@
 jQuery(document).ready(function () {
 
+      $('#insertUser').prop('disabled', true);
 
       jQuery('#datepicker').datepicker({
 //        minDate: '-100Y',
@@ -63,17 +64,17 @@ jQuery(document).ready(function () {
                 $("body").overhang({
                   type: "success",
                   message: "Cadastrado com sucesso.",
-                  closeConfirm: "true",
+                  closeConfirm: "false",
                   duration: 3
                 });
               } else {
                 $("body").overhang({
                 type: "error",
-                message: "Erro ao cadastrar, entre em contato com o suporte.",
-                closeConfirm: "true",
+                message: "Erro ao cadastrar. Erro:" + mensagem,
+                closeConfirm: "false",
                 duration: 3
                 });
-                // 
+                //
                 // alert(mensagem);
               }
 
@@ -89,22 +90,58 @@ jQuery(document).ready(function () {
 
     $( "#usuario" ).blur(function() {
       var textouser = jQuery(this).val();
+
+      //alert(textouser);
       if( textouser != '') {
         jQuery.ajax({
           type: "POST",
           url: "inc/functions.php?a=verificauser",
           data: "usuario="+textouser,
           success: function(mensagem){
-            if (mensagem == 1) {
+            if (mensagem == 0) {
               $("body").overhang({
                 type: "error",
                 message: "Usuario já existe",
-                closeConfirm: "true",
-                duration: 3
+                duration: 3,
+                callback: function () {
+                    $( "#usuario" ).val('');
+                    $( "#usuario" ).focus();
+                  }
               });
+            } else{
+              $("body").overhang({
+                type: "success",
+                message: "Usuário "+textouser+" disponível!",
+                duration: 4
+                });
             }
           }
         });
+      }
+    });
+
+    $( "#confsenha" ).blur(function() {
+      var senha = jQuery('#senha').val();
+      var conferesenha = jQuery('#confsenha').val();
+      if (senha == '' || conferesenha == '') {
+
+        $("body").overhang({
+          type: "error",
+          message: "Campos senha e confirmação de senha devem estar preenchidos.",
+          duration: 3
+        });
+
+      } else if (senha != conferesenha) {
+
+        $("body").overhang({
+          type: "error",
+          message: "Senhas não conferem!",
+          duration: 3
+        });
+        
+        $('#insertUser').prop('disabled', true);
+      } else if (senha == conferesenha){
+        $('#insertUser').prop('disabled', false);
       }
     });
 

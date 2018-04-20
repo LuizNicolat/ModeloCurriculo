@@ -1,10 +1,11 @@
 <?php
 include 'database.php';
 
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
 $action = isset($_GET['a'])?$_GET['a']:'';
 
 if ($action == 'inserir') {
-    $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
     try {
       $resultado = open_database();
@@ -31,22 +32,23 @@ if ($action == 'inserir') {
   if(mysqli_query($conn, $sql)){
       echo 1;
   } else{
-      echo 0 + ":" + mysql_error();//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+      echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
 }
 else if ($action == 'verificauser') {
 
   $usuario = $_POST['usuario'];
 
-  $usuario_query = mysql_query("SELECT * FROM users WHERE username = '$usuario'");
-             $count=mysql_num_rows($usuario_query);
+  $usuario_query = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario'");
+             $count=mysqli_num_rows($usuario_query);
              if($count==0)
              {
                echo 1;
              }
             else
             {
-              echo 0 "-" + mysqli_error();
+              echo 0;
+              // echo 0 "-" + mysqli_error();
             }
 }
 

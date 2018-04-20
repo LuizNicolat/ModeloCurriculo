@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 19-Abr-2018 às 01:55
--- Versão do servidor: 5.7.21
--- PHP Version: 7.1.13
+-- Generation Time: 19-Abr-2018 às 23:14
+-- Versão do servidor: 5.7.17
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,8 +40,19 @@ CREATE TABLE `dados_cadastrais` (
   `localidade` varchar(255) NOT NULL,
   `uf` varchar(4) NOT NULL,
   `ibge` int(10) DEFAULT NULL,
-  `numero` int(10) NOT NULL
+  `numero` int(10) NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `dados_cadastrais`
+--
+
+INSERT INTO `dados_cadastrais` (`id`, `nome`, `sobrenome`, `nascimento`, `cpf`, `cep`, `logradouro`, `bairro`, `localidade`, `uf`, `ibge`, `numero`, `usuario`, `senha`) VALUES
+(2, 'Luiz', 'Nicolat', '04/04/2018', 1234567888, 83601170, 'Rua Sete de Setembro', 'Centro', 'Campo Largo', 'PR', 4104204, 1234, 'admin', 'luiz'),
+(3, 'Teste', 'Testeiro', '06/04/2018', 123456789, 80440220, 'Rua Bruno Filgueira', 'Batel', 'Curitiba', 'PR', 4106902, 123456, 'admin', 'asdas'),
+(6, 'Teste', 'Testeiro', '06/04/2018', 1234562222, 80440220, 'Rua Bruno Filgueira', 'Batel', 'Curitiba', 'PR', 4106902, 123456, 'admin2', 'asdas');
 
 -- --------------------------------------------------------
 
@@ -53,18 +64,6 @@ CREATE TABLE `objetivos` (
   `id` int(11) NOT NULL,
   `idusuario` int(11) NOT NULL,
   `objetivo` varchar(5000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `usuario`
---
-
-CREATE TABLE `usuario` (
-  `idusuario` int(11) DEFAULT NULL,
-  `nomeuser` varchar(100) NOT NULL,
-  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -86,12 +85,6 @@ ALTER TABLE `objetivos`
   ADD KEY `fk_objetivo_dados` (`idusuario`);
 
 --
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD KEY `fk_user_dados` (`idusuario`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -99,14 +92,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `dados_cadastrais`
 --
 ALTER TABLE `dados_cadastrais`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `objetivos`
 --
 ALTER TABLE `objetivos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
@@ -116,12 +107,6 @@ ALTER TABLE `objetivos`
 --
 ALTER TABLE `objetivos`
   ADD CONSTRAINT `fk_objetivo_dados` FOREIGN KEY (`idusuario`) REFERENCES `dados_cadastrais` (`id`);
-
---
--- Limitadores para a tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_user_dados` FOREIGN KEY (`idusuario`) REFERENCES `dados_cadastrais` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
