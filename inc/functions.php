@@ -26,7 +26,7 @@ if ($action == 'inserir') {
     $numero = $_POST['numero'];
 
     $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
 
   $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero,usuario,senha) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero','$usuario','$senha')";
   if(mysqli_query($conn, $sql)){

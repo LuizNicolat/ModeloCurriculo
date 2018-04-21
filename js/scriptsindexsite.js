@@ -66,7 +66,7 @@ jQuery(document).ready(function () {
                   message: "Cadastrado com sucesso.",
                   closeConfirm: "false",
                   duration: 3
-                });
+                })
               } else {
                 $("body").overhang({
                 type: "error",
@@ -85,7 +85,17 @@ jQuery(document).ready(function () {
     });
 
     jQuery( "#testapopup" ).click(function() {
-
+      jQuery('#nome').val()='';
+      jQuery('#sobrenome').val()='';
+      jQuery('#datepicker').val()='';
+      jQuery('#cep').val()='';
+      jQuery('#cpf').val()='';
+      jQuery('#rua').val()='';
+      jQuery('#bairro').val()='';
+      jQuery('#cidade').val()='';
+      jQuery('#uf').val()='';
+      jQuery('#ibge').val()='';
+      jQuery('#numero').val()='';
     });
 
     $( "#usuario" ).blur(function() {
@@ -138,7 +148,7 @@ jQuery(document).ready(function () {
           message: "Senhas não conferem!",
           duration: 3
         });
-        
+
         $('#insertUser').prop('disabled', true);
       } else if (senha == conferesenha){
         $('#insertUser').prop('disabled', false);
@@ -163,5 +173,18 @@ jQuery(document).ready(function () {
 //      jQuery(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
 //        $('.avatar').attr('src', file);
 //    });
-
 });
+
+function limpacampos(){
+  jQuery('#nome').val()='';
+  jQuery('#sobrenome').val()='';
+  jQuery('#datepicker').val()='';
+  jQuery('#cep').val()='';
+  jQuery('#cpf').val()='';
+  jQuery('#rua').val()='';
+  jQuery('#bairro').val()='';
+  jQuery('#cidade').val()='';
+  jQuery('#uf').val()='';
+  jQuery('#ibge').val()='';
+  jQuery('#numero').val()='';
+};
