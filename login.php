@@ -33,6 +33,7 @@
     <script src="./js/scriptsindexsite.js"></script>
     <script src="./js/buscacep.js"></script>
     <script src="./js/overhang.js"></script>
+    <script src="./js/scriptslogin.js"></script>
 
 
 <!-- Latest compiled and minified JavaScript -->
@@ -47,11 +48,11 @@
         <form action="" id="loginForm">
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input class="form-control" type="text" name='username' placeholder="Usuário"/>
+            <input class="form-control" type="text" id="username" name='username' placeholder="Usuário"/>
           </div>
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" type="password" name='password' placeholder="Senha"/>
+            <input class="form-control" type="password" id="password" name='password' placeholder="Senha"/>
           </div>
           <div class="form-group">
             <button type="button" class="btn btn-warning btn-block">Login</button>

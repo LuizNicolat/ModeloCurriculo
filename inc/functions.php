@@ -37,19 +37,32 @@ if ($action == 'inserir') {
 }
 else if ($action == 'verificauser') {
 
-  $usuario = $_POST['usuario'];
+    $usuario = $_POST['usuario'];
 
-  $usuario_query = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario'");
-             $count=mysqli_num_rows($usuario_query);
-             if($count==0)
-             {
-               echo 1;
-             }
-            else
-            {
-              echo 0;
-              // echo 0 "-" + mysqli_error();
-            }
-}
+    $usuario_query = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario'");
+               $count=mysqli_num_rows($usuario_query);
+               if($count==0)
+               {
+                 echo 1;
+               }
+              else
+              {
+                echo 0;
+                // echo 0 "-" + mysqli_error();
+              }
+  }
+  else if ($action == 'criptografasenha') {
 
+      $criptosenha = '';
+
+      $criptosenha = $_POST['password'];
+
+      if ($criptosenha != '') {
+        $result = md5($criptosenha);
+        echo $result;
+      } else{
+        echo 0;
+      }
+
+    }
  ?>
