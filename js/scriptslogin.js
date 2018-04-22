@@ -47,7 +47,7 @@ jQuery(document).ready(function () {
               duration: 3
             })
           } else {
-            window.location = "./curriculosample.php";
+            window.location = "./admin/indexcustom.html";
           }
         }
     });

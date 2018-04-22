@@ -1,5 +1,5 @@
 body{
-    background-color: #181818;
+    background-color: #f0f0f0;
 }
 
 .wrap{
@@ -9,7 +9,7 @@ body{
     margin: 0 auto;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: #fcf8e3;
+    background-color: #ffffff;
     padding-bottom: 20px;
 /*    display: none;*/
 }
