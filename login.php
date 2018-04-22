@@ -55,7 +55,7 @@
             <input class="form-control" type="password" id="password" name='password' placeholder="Senha"/>
           </div>
           <div class="form-group">
-            <button type="button" class="btn btn-warning btn-block">Login</button>
+            <button type="button" class="btn btn-warning btn-block" id="login">Login</button>
           </div>
           <!-- <div class="form-group text-center">
             <a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>

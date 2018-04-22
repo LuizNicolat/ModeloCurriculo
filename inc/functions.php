@@ -65,4 +65,18 @@ else if ($action == 'verificauser') {
       }
 
     }
+    else if ($action == 'login') {
+
+          $usuario = $_POST['username'];
+          $password = md5($_POST['password']);
+
+          $verifica = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario' AND senha = '$password'") or die("erro ao selecionar");
+          if (mysqli_num_rows($verifica)<=0){
+            echo 1;
+            die();
+          }else{
+            setcookie("usuario",$usuario);
+            // header("Location:../curriculosample.php");
+          }
+      }
  ?>
