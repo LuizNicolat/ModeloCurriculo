@@ -67,15 +67,21 @@ else if ($action == 'verificauser') {
     }
     else if ($action == 'login') {
 
+          session_start();
+
           $usuario = $_POST['username'];
           $password = md5($_POST['password']);
+          $nivelacesso = mysqli_query($conn,"SELECT nivel_acesso FROM dados_cadastrais WHERE usuario = '$usuario'");
 
           $verifica = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario' AND senha = '$password'") or die("erro ao selecionar");
           if (mysqli_num_rows($verifica)<=0){
             echo 1;
             die();
           }else{
-            setcookie("usuario",$usuario);
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['permissao'] = (intval)$nivelacesso;
+            // setcookie("usuario",$usuario);
+            // setcookie("permissao",$nivelacesso);
             // header("Location:../curriculosample.php");
           }
       }

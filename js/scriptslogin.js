@@ -34,6 +34,8 @@ jQuery(document).ready(function () {
     var usuario = jQuery('#username').val();
     var senha = jQuery('#password').val();
 
+    var sessName='<?php echo $_SESSION["permissao"]; ?>';
+    alert(sessName);
     jQuery.ajax({
         type: "POST",
         url: "inc/functions.php?a=login",
@@ -47,7 +49,7 @@ jQuery(document).ready(function () {
               duration: 3
             })
           } else {
-            window.location = "./admin/indexcustom.html";
+            window.location = "./logado/verificapermissao.php";
           }
         }
     });
