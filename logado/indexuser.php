@@ -1,10 +1,9 @@
 <?php
 session_start();
-// if ($_SESSION["permissao"] == 0) {
-//   header("Location:./indexadmin.php");
-// } else if ($_SESSION["permissao"] == 1) {
-//     header("Location:./indexuser.php");
-// }
+if($_SESSION['logado'] != 1){
+	header('location: ../login.php');
+	exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -140,7 +139,7 @@ session_start();
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION["usuario"] + " " + $_SESSION["permissao"]?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION["usuario"]?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -153,7 +152,7 @@ session_start();
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -184,7 +183,7 @@ session_start();
                   <li class="active">
                       <a href="blank-page.html"><i class="fa fa-fw fa-eye"></i> Visualizar</a>
                   </li>
-                    <li>
+                    <!-- <li>
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
@@ -204,7 +203,7 @@ session_start();
                     </li>
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -218,7 +217,7 @@ session_start();
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>Statistics Overview</small>
+                            Bem-vindo <small><?php echo $_SESSION["nome"]?></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">

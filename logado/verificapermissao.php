@@ -1,8 +1,12 @@
 <?php
+include "../inc/functions.php";
+
+$resultpermit = pegapermissao($_SESSION["usuario"]);
+
 session_start();
-if ($_SESSION["permissao"] == 0) {
+if ($resultpermit == 0) {
   header("Location:indexadmin.php");
-} else if ($_SESSION["permissao"] == 1) {
+} else if ($resultpermit == 1) {
     header("Location:indexuser.php");
 }
 ?>

@@ -67,22 +67,35 @@ else if ($action == 'verificauser') {
     }
     else if ($action == 'login') {
 
-          session_start();
-
           $usuario = $_POST['username'];
           $password = md5($_POST['password']);
-          $nivelacesso = mysqli_query($conn,"SELECT nivel_acesso FROM dados_cadastrais WHERE usuario = '$usuario'");
 
-          $verifica = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario' AND senha = '$password'") or die("erro ao selecionar");
+          $verifica = mysqli_query($conn,"SELECT * FROM dados_cadastrais WHERE usuario = '$usuario' AND senha = '$password'"); //or die("erro ao selecionar");
+          $res=mysqli_fetch_array($verifica); // joga em array os dados do select
           if (mysqli_num_rows($verifica)<=0){
-            echo 1;
-            die();
+            echo 0;
+            //die();
           }else{
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['permissao'] = (intval)$nivelacesso;
-            // setcookie("usuario",$usuario);
-            // setcookie("permissao",$nivelacesso);
-            // header("Location:../curriculosample.php");
+            if(!isset($_SESSION)) 	//verifica se há sessão aberta
+        		session_start();		//Inicia seção
+        		//Abrindo seções
+            $_SESSION['logado']=1;
+            $_SESSION['iduser']=$res['id'];
+            $_SESSION['nome']=$res['nome'];
+        		$_SESSION['usuario']=$res['usuario'];
+        		$_SESSION['permissao']=$res['nivel_acesso'];
+        		echo $res['nivel_acesso'];
+        		exit;
           }
-      }
+      };
+
+      // function pegapermissao($usuario){
+      //   $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+      //
+      //   $nivelacesso = mysqli_query($conn,"SELECT nivel_acesso FROM dados_cadastrais WHERE usuario = '$usuario'");
+      //   while ($row = $nivelacesso->fetch_assoc()) {
+      //     echo $row['nivel_acesso'];
+      //   }
+      //   // echo (string)$nivelacesso;
+      // }
  ?>

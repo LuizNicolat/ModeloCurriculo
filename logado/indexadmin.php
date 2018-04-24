@@ -1,12 +1,10 @@
 <?php
-session_start();
-// if ($_SESSION["permissao"] == 0) {
-//   header("Location:./logado/indexadmin.php");
-// } else if ($_SESSION["permissao"] == 1) {
-//     header("Location:./logado/indexuser.php");
-// }
+	session_start();
+if($_SESSION['logado'] != 1){
+	header('location: ../login.php');
+	exit();
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,7 +151,7 @@ session_start();
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

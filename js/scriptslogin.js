@@ -33,23 +33,22 @@ jQuery(document).ready(function () {
   jQuery( "#login" ).click(function() {
     var usuario = jQuery('#username').val();
     var senha = jQuery('#password').val();
-
-    var sessName='<?php echo $_SESSION["permissao"]; ?>';
-    alert(sessName);
     jQuery.ajax({
         type: "POST",
         url: "inc/functions.php?a=login",
         data: "username="+ usuario+"&password="+ senha,
         success: function(mensagem){
-          if (mensagem == 1) {
+          if (mensagem == 0) {
             $("body").overhang({
               type: "error",
-              message: "Erro ao efetuar login." + mensagem,
+              message: "Erro ao efetuar login.",
               closeConfirm: "false",
               duration: 3
             })
-          } else {
-            window.location = "./logado/verificapermissao.php";
+          } else if (mensagem == 1){
+            window.location = "./logado/indexadmin.php";
+          } else if (mensagem == 2){
+            window.location = "./logado/indexuser.php";
           }
         }
     });
