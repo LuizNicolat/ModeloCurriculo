@@ -1,18 +1,35 @@
 $(document).ready(function() {
 
+  $( "#usuario" ).blur(function() {
+    var textouser = jQuery(this).val();
+    if( textouser != '') {
+      jQuery.ajax({
+        type: "POST",
+        url: "./inc/functionslogado.php?a=verificauser",
+        data: "usuario="+textouser,
+        success: function(mensagem){
+          if (mensagem == 0) {
+            $("body").overhang({
+              type: "error",
+              message: "Usuario já existe",
+              duration: 3,
+              callback: function () {
+                  $( "#usuario" ).val('');
+                  $( "#usuario" ).focus();
+                }
+            });
+          } else{
+            $("body").overhang({
+              type: "success",
+              message: "Usuário "+textouser+" disponível!",
+              duration: 4
+              });
+          }
+        }
+      });
+    }
+  });
 
 
-
-  })
-
-  // jQuery('#deletar').click(function(){
-  //     var codigouser = jQuery('#codigouser').text();
-  //
-  //     alert(codigouser);
-  // })
-
-  $("#deletar").one("click", function() {
-    var codigouser = jQuery('#codigouser').text();
-$(this).unbind('click');
-    alert(codigouser);
 })
+//fim do ready

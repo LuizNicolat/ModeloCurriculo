@@ -30,6 +30,9 @@ if($_SESSION['logado'] != 1){
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+		<!-- Overhang -->
+		<link type="text/css" rel="stylesheet" href="CSS/overhang.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -186,7 +189,7 @@ if($_SESSION['logado'] != 1){
                               <a href="indexadmin.php?form=listauser">Listar</a>
                           </li>
                           <li>
-                              <a href="#">Objetivo</a>
+                              <a href="indexadmin.php?form=editdeluser">Editar</a>
                           </li>
                           <li>
                               <a href="#">Formação</a>
@@ -270,8 +273,13 @@ if($_SESSION['logado'] != 1){
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+		<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <!-- <script src="js/jquery.js"></script> -->
+		<script src="js/jqueryUI.js"></script>
 		<script src="js/scriptslogado.js"></script>
+		<script src="js/buscacep.js"></script>
+		<script src="js/overhang.js"></script>
+		<!-- <script src="js/scriptsindexsite.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
