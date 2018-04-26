@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+  $("#editUser").click(function(){
+    //alert("teste");
+    $("#page-wrapper").overhang({
+      type: "error",
+      message: "Usuario já existe",
+      duration: 3
+    });
+
+  });
+
   $( "#usuario" ).blur(function() {
     var textouser = jQuery(this).val();
     if( textouser != '') {

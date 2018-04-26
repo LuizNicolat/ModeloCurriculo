@@ -173,6 +173,35 @@ jQuery(document).ready(function () {
 //      jQuery(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
 //        $('.avatar').attr('src', file);
 //    });
+$( "#cpf" ).blur(function() {
+  var cpf = jQuery('#cpf').val();
+
+  if( cpf != '') {
+    jQuery.ajax({
+      type: "POST",
+      url: "inc/functions.php?a=verificacpf",
+      data: "cpf="+cpf,
+      success: function(mensagem){
+        if (mensagem == 1) {
+          $("body").overhang({
+            type: "error",
+            message: "CPF informado já existe no banco de dados.",
+            duration: 3
+          });
+        }
+        // else {
+        //   $("body").overhang({
+        //     type: "success",
+        //     message: "CPF "+cpf+" disponível!",
+        //     duration: 4
+        //     });
+        // }
+      }
+    });
+  }
+});
+
+
 });
 
 function limpacampos(){

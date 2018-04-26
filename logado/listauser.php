@@ -81,7 +81,7 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                                         <td><?php echo $row['usuario'] ?></td>
                                         <td><?php echo $row['senha'] ?></td>
                                         <td><?php echo $row['descricao'] ?></td>
-                                        <td> <a href="#">Editar </a> | <a href="#" id="deletar">    Apagar</a></td>
+                                        <td> <a href="indexadmin.php?form=editdeluser&id=<?php echo $row['id']; ?>" id="editar">Editar </a> | <a href="#" id="deletar">    Apagar</a></td>
                                         <!-- <td>1265</td>
                                         <td>32.3%</td>
                                         <td>$321.33</td> -->
