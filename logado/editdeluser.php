@@ -6,19 +6,46 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 if(isset($_GET['id']))
 {
   $id = $_GET['id'];
-  $usuario = mysqli_query($conn,"SELECT * FROM dados_cadastrais");
+  $usuario = mysqli_query($conn,"SELECT * FROM dados_cadastrais where id = '$id'");
   $user = mysqli_fetch_assoc($usuario);
+  //unset($id);
 }
 ?>
 
 <!-- Page Heading -->
 <div class="col-xs-12 col-sm-4 form-group">
     <label for="usuario">Usuário</label>
-    <input type="text" id="usuario" name="usuario" class="form-control" />
+    <input type="text" id="usuario" name="usuario" class="form-control"
+    <?php
+    if(isset($user))
+    {
+    ?> value= "<?php echo $_GET['usuario']; ?>"<?php
+    }
+    else
+    {
+      ?>
+      ""
+    <?php
+    }
+    ?>
+    >
 </div>
 <div class="col-xs-12 col-sm-4 form-group">
     <label for="senha">Senha</label>
-    <input type="password" id="senha" name="senha" class="form-control" />
+    <input type="password" id="senha" name="senha" class="form-control"
+    <?php
+    if(isset($user))
+    {
+    ?> value= "<?php echo $_GET['senha']; ?>"<?php
+    }
+    else
+    {
+      ?>
+      ""
+    <?php
+    }
+    ?>
+    >
 </div>
 <div class="col-xs-12 col-sm-4 form-group">
     <label for="confsenha">Repita a senha</label>
@@ -31,11 +58,11 @@ if(isset($_GET['id']))
                 <!-- /.row -->
                 <div class="form-group col-md-4 col-xs-12 col-lg-4">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome" value=
+                    <input type="text" class="form-control" id="nome" placeholder="Nome"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['nome'];
+                    ?> value= "<?php echo $user['nome']; ?>"<?php
                     }
                     else
                     {
@@ -48,11 +75,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="form-group col-md-4 col-xs-12 col-lg-4">
                     <label for="sobrenome">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome" placeholder="sobrenome" value=
+                    <input type="text" class="form-control" id="sobrenome" placeholder="sobrenome"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['sobrenome'];
+                    ?> value= "<?php echo $user['sobrenome']; ?>"<?php
                     }
                     else
                     {
@@ -65,11 +92,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="form-group col-md-4 col-xs-12 col-lg-4">
                     <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" id="cpf" placeholder="cpf" value=
+                    <input type="text" class="form-control" id="cpf" placeholder="cpf"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['cpf'];
+                    ?> value= "<?php echo $user['cpf']; ?>"<?php
                     }
                     else
                     {
@@ -82,11 +109,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="form-group col-md-4 col-xs-12 col-lg-4">
                     <label for="dtnasc">Nascimento</label>
-                    <input type="text" class="form-control" id="datepicker" value=
+                    <input type="text" class="form-control" id="datepicker"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['nascimento'];
+                    ?> value= "<?php echo $user['nascimento']; ?>"<?php
                     }
                     else
                     {
@@ -102,11 +129,11 @@ if(isset($_GET['id']))
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="cep">CEP</label>
                     <div class="input-group">
-                        <input type="text" id="cep" class="form-control" name="cep" placeholder="Clique para pesquisar ->" value=
+                        <input type="text" id="cep" class="form-control" name="cep" placeholder="Clique para pesquisar ->"
                         <?php
                         if(isset($user))
                         {
-                        echo $user['cep'];
+                        ?> value= "<?php echo $user['cep']; ?>"<?php
                         }
                         else
                         {
@@ -126,11 +153,11 @@ if(isset($_GET['id']))
 
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="logradouro">Logradouro</label>
-                    <input type="text" id="rua" name="logradouro" class="form-control"  value=
+                    <input type="text" id="rua" name="logradouro" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['logradouro'];
+                     ?> value= "<?php echo $user['logradouro']; ?>"<?php
                     }
                     else
                     {
@@ -143,11 +170,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro" name="bairro" class="form-control"  value=
+                    <input type="text" id="bairro" name="bairro" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['bairro'];
+                    ?> value= "<?php echo $user['bairro']; ?>"<?php
                     }
                     else
                     {
@@ -160,11 +187,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="localidade">Localidade</label>
-                    <input type="text" id="cidade" name="localidade" class="form-control"  value=
+                    <input type="text" id="cidade" name="localidade" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['localidade'];
+                    ?> value= "<?php echo $user['localidade']; ?>"<?php
                     }
                     else
                     {
@@ -177,11 +204,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="UF">UF</label>
-                    <input type="text" id="uf" name="UF" class="form-control"  value=
+                    <input type="text" id="uf" name="UF" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['uf'];
+                    ?> value= "<?php echo $user['uf']; ?>"<?php
                     }
                     else
                     {
@@ -194,11 +221,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="IBGE">IBGE</label>
-                    <input type="text" id="ibge" name="IBGE" class="form-control"  value=
+                    <input type="text" id="ibge" name="IBGE" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['ibge'];
+                    ?> value= "<?php echo $user['ibge']; ?>"<?php
                     }
                     else
                     {
@@ -211,11 +238,11 @@ if(isset($_GET['id']))
                 </div>
                 <div class="col-xs-12 col-sm-4 form-group">
                     <label for="numero">Número</label>
-                    <input type="text" id="numero" name="numero" class="form-control"  value=
+                    <input type="text" id="numero" name="numero" class="form-control"
                     <?php
                     if(isset($user))
                     {
-                    echo $user['numero'];
+                    ?> value= "<?php echo $user['numero']; ?>"<?php
                     }
                     else
                     {
