@@ -23,6 +23,7 @@ if($_SESSION['logado'] != 1){
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+		<link href="css/estilologado.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">

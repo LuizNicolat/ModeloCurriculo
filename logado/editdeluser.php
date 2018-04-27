@@ -3,14 +3,31 @@ include ('../inc/database.php');
 
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-if(isset($_GET['id']))
+if(isset($_REQUEST['id']))
 {
-  $id = $_GET['id'];
+  $id = $_REQUEST['id'];
   $usuario = mysqli_query($conn,"SELECT * FROM dados_cadastrais where id = '$id'");
   $user = mysqli_fetch_assoc($usuario);
   //unset($id);
 }
 ?>
+<!-- input do id escondido -->
+<div class="col-xs-12 col-sm-4 form-group idhidden">
+    <input type="text" id="id" name="id" class="form-control"
+    <?php
+    if(isset($user))
+    {
+    ?> value= "<?php echo $user['id']; ?>"<?php
+    }
+    else
+    {
+      ?>
+      ""
+    <?php
+    }
+    ?>
+    >
+</div>
 
 <!-- Page Heading -->
 <div class="col-xs-12 col-sm-4 form-group">
@@ -19,7 +36,7 @@ if(isset($_GET['id']))
     <?php
     if(isset($user))
     {
-    ?> value= "<?php echo $_GET['usuario']; ?>"<?php
+    ?> value= "<?php echo $user['usuario']; ?>"<?php
     }
     else
     {
@@ -36,7 +53,7 @@ if(isset($_GET['id']))
     <?php
     if(isset($user))
     {
-    ?> value= "<?php echo $_GET['senha']; ?>"<?php
+    ?> value= "<?php echo $user['senha']; ?>"<?php
     }
     else
     {

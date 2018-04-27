@@ -113,21 +113,4 @@ else if ($action == 'verificauser') {
       //   }
       //   // echo (string)$nivelacesso;
       // }
-
-
-      class Usuario{
-            function consultaUsuario($id=""){
-      		//se veio ID, então consulta especifico:*= tudo
-      		//ou pede os campos que deseja: id, nome, email WHERE = aonde
-      		//igual: =, diferente: <>, <=, >=
-      		if($id != ""){
-      			$result = mysql_query("SELECT * FROM dados_cadastrais WHERE id = '$id'");
-      		} else { //consulta geral
-      			$result = mysql_query("SELECT id,nome,email FROM usuarios ORDER BY nome ASC"); //ASC ou DESC
-      		}
-      		//saida nos dados para fora da function:
-      		return $result;
-      		//$listagem = Usuario::consultaUsuario($cod_usuario);
-      	}
-      }
  ?>
