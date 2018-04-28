@@ -35,11 +35,10 @@ $(document).ready(function() {
               $("body").overhang({
               type: "error",
               message: "Erro ao atualizar o cadastro"+ mensagem,
-              closeConfirm: "false",
               duration: 15
               });
               //
-              // alert(mensagem);
+              alert(mensagem);
             }
 
           }

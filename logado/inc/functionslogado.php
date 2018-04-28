@@ -29,11 +29,12 @@ if ($action == 'atualizar') {
     $usuario = $_POST['usuario'];
     $senha = md5($_POST['senha']);
 
-  $sql = "UPDATE dados_cadastrais SET nome='$nome',  sobrenome='$sobrenome',  nascimento='$nascimento',  cpf='$cpf',cep='$cep',  logradouro'$logradouro',  bairro='$bairro',localidade='$localidade',  uf='$localidade',  ibge='$ibge',  numero='$numero',  usuario='$usuario', senha='$senha' WHERE id='$id'";
+    $sql = "UPDATE dados_cadastrais SET nome='".$nome."' WHERE id='".$id."'";
+  //$sql = "UPDATE dados_cadastrais SET nome='$nome',  sobrenome='$sobrenome',  nascimento='$nascimento',  cpf='$cpf',cep='$cep',  logradouro'$logradouro',  bairro='$bairro',localidade='$localidade',  uf='$localidade',  ibge='$ibge',  numero='$numero',  usuario='$usuario', senha='$senha' WHERE id='$id'";
   if(mysqli_query($conn, $sql)){
       echo 1;
   } else{
-      echo mysqli_error($sql);;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+      echo mysqli_error($conn);;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
 }
  ?>
