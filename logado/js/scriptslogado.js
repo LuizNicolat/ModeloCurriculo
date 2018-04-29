@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $("#editUser").click(function(){
     $(function(){
-      var nome = jQuery('#id').val();
+      var id = jQuery('#id').val();
       var nome = jQuery('#nome').val();
       var sobrenome = jQuery('#sobrenome').val();
       var nascimento = jQuery('#datepicker').val();
@@ -29,13 +29,13 @@ $(document).ready(function() {
                 message: "Atualizado com sucesso.",
                 closeConfirm: "false",
                 duration: 3,
-                callback: window.location = "./logado/indexadmin.php"
+                callback: window.location = "./indexadmin.php?form=listauser"
               })
             } else {
               $("body").overhang({
               type: "error",
-              message: "Erro ao atualizar o cadastro"+ mensagem,
-              duration: 15
+              message: "Erro ao atualizar o cadastro"+  mensagem,
+              duration: 5
               });
               //
               alert(mensagem);
