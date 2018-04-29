@@ -84,20 +84,6 @@ jQuery(document).ready(function () {
 
     });
 
-    jQuery( "#testapopup" ).click(function() {
-      jQuery('#nome').val()='';
-      jQuery('#sobrenome').val()='';
-      jQuery('#datepicker').val()='';
-      jQuery('#cep').val()='';
-      jQuery('#cpf').val()='';
-      jQuery('#rua').val()='';
-      jQuery('#bairro').val()='';
-      jQuery('#cidade').val()='';
-      jQuery('#uf').val()='';
-      jQuery('#ibge').val()='';
-      jQuery('#numero').val()='';
-    });
-
     $( "#usuario" ).blur(function() {
       var textouser = jQuery(this).val();
 
@@ -189,13 +175,6 @@ $( "#cpf" ).blur(function() {
             duration: 3
           });
         }
-        // else {
-        //   $("body").overhang({
-        //     type: "success",
-        //     message: "CPF "+cpf+" disponível!",
-        //     duration: 4
-        //     });
-        // }
       }
     });
   }

@@ -28,11 +28,12 @@ if ($action == 'inserir') {
     $usuario = $_POST['usuario'];
     $senha = md5($_POST['senha']);
 
-  $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero,usuario,senha) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero','$usuario','$senha','0')";
+  $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero,usuario,senha,nivel_acesso) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero','$usuario','$senha',2)";
   if(mysqli_query($conn, $sql)){
       echo 1;
   } else{
-      echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    echo mysqli_error($conn);
+    //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
 }
 else if ($action == 'verificauser') {
@@ -48,7 +49,7 @@ else if ($action == 'verificauser') {
               else
               {
                 echo 0;
-                // echo 0 "-" + mysqli_error();
+                //echo mysqli_error($conn);
               }
   }
   else if ($action == 'criptografasenha') {

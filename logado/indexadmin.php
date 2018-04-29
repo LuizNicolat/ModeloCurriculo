@@ -25,6 +25,9 @@ if($_SESSION['logado'] != 1){
     <link href="css/sb-admin.css" rel="stylesheet">
 		<link href="css/estilologado.css" rel="stylesheet">
 
+		<!-- Jquery UI CSS -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
@@ -186,6 +189,9 @@ if($_SESSION['logado'] != 1){
 									<li>
                       <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-user"></i> Usuários <i class="fa fa-fw fa-caret-down"></i></a>
                       <ul id="users" class="collapse">
+												<li>
+														<a href="indexadmin.php?form=caduser">Cadastrar</a>
+												</li>
                           <li>
                               <a href="indexadmin.php?form=listauser">Listar</a>
                           </li>
@@ -279,11 +285,15 @@ if($_SESSION['logado'] != 1){
 		  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 		  crossorigin="anonymous">
 			</script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 		<!-- <script src="js/jqueryUI.js"></script> -->
 		<script src="js/scriptslogado.js"></script>
 		<script src="js/buscacep.js"></script>
 		<script src="js/overhang.js"></script>
+		<script src="./js/tradPTBR.js"></script>
+		<!-- <script src="../js/scriptsindexsite.js"></script> -->
 		<!-- <script src="js/scriptsindexsite.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
