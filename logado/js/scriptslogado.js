@@ -10,22 +10,47 @@ $(document).ready(function() {
 
 
   jQuery.datepicker.setDefaults($.extend(
-
   jQuery.datepicker.regional[ 'pt-BR' ])
 );
-// jQuery( '#datanasc' ).datepicker({
-//   beforeShow: function(input) {
-//     jQuery( input ).css( 'background-color', '#ff9' );
-//   },
-//   onSelect: function(dateText, inst) {
-//     jQuery( this ).css( 'background-color', '' );
-//   },
-// //      onClose: function(dateText, inst) {
-// //        jQuery( this ).css( 'background-color', '' );
-// //      }
+jQuery( '#datanasc' ).datepicker({
+  beforeShow: function(input) {
+    jQuery( input ).css( 'background-color', '#ff9' );
+  },
+  onSelect: function(dateText, inst) {
+    jQuery( this ).css( 'background-color', '' );
+  },
+//      onClose: function(dateText, inst) {
+//        jQuery( this ).css( 'background-color', '' );
+//      }
+});
+
+document.getElementById('cpf').addEventListener('keydown', function(e) {
+    var key   = e.keyCode ? e.keyCode : e.which;
+
+    if (!( [8, 9, 13, 27, 46, 110, 190].indexOf(key) !== -1 ||
+         (key == 65 && ( e.ctrlKey || e.metaKey  ) ) ||
+         (key >= 35 && key <= 40) ||
+         (key >= 48 && key <= 57 && !(e.shiftKey || e.altKey)) ||
+         (key >= 96 && key <= 105)
+       )) e.preventDefault();
+});
+
+//verifica tamanho do input a cada tecla pressionada
+// $( "#cpf" ).keypress(function() {
+//   if($(this).val().length > 14) {
+//       //alert("excedeu");
+//       $("body").overhang({
+//       type: "error",
+//       message: "CPF excede o máximo de caracteres.",
+//       duration: 2,
+//       callback: function () {
+//           $('#insertUser').prop('disabled', true);
+//         }
+//       });
+//   } else {
+//        // Disable submit button
+//   }
 // });
-
-
 
   $("#delUser").click(function(){
     var id = jQuery('#id').val();
@@ -111,7 +136,7 @@ $(document).ready(function() {
               })
               setTimeout(function() {   //calls click event after a certain time
                  window.location = "./indexadmin.php?form=listauser";
-              }, 5000);
+              }, 4000);
 
             } else {
               $("body").overhang({

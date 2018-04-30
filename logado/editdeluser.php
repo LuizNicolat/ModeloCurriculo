@@ -109,7 +109,7 @@ if(isset($_REQUEST['id']))
                 </div>
                 <div class="form-group col-md-4 col-xs-12 col-lg-4">
                     <label for="cpf">CPF</label>
-                    <input type="text" class="form-control" id="cpf" placeholder="cpf"
+                    <input type="text" class="form-control" id="cpf" placeholder="cpf" maxlength="14"
                     <?php
                     if(isset($user))
                     {

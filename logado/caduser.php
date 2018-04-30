@@ -41,7 +41,7 @@ $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     </div>
     <div class="form-group col-md-4 col-xs-12 col-lg-4">
         <label for="cpf">CPF</label>
-        <input type="text" pattern="\d*" class="form-control" id="cpf" class="campocpf" placeholder="cpf" maxlength="14">
+        <input type="text" class="form-control" id="cpf" class="campocpf" placeholder="cpf" maxlength="14">
     </div>
     <div class="form-group col-md-4 col-xs-12 col-lg-4">
         <label for="dtnasc">Nascimento</label>
