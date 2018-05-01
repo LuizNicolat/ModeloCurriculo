@@ -122,10 +122,18 @@ document.getElementById('cpf').addEventListener('keydown', function(e) {
       var usuario = jQuery('#usuario').val();
       var senha = jQuery('#senha').val();
 
+      var nivel_acesso = jQuery('#permit').val();
+      if (nivel_acesso == 'Administrador') {
+        nivel_acesso = 1;
+      } else if (nivel_acesso == 'Usuário') {
+        nivel_acesso = 2;
+      };
+
+      alert(nivel_acesso);
       jQuery.ajax({
           type: "POST",
           url: "../logado/inc/functionslogado.php?a=alterar",
-          data: "id="+id+"&nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+cep+"&cpf="+cpf+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero+"&usuario="+ usuario+"&senha="+ senha,
+          data: "id="+id+"&nome="+nome+"&sobrenome="+sobrenome+"&nascimento="+ nascimento+"&cep="+cep+"&cpf="+cpf+"&logradouro="+ logradouro+"&bairro="+ bairro+"&localidade="+ localidade+"&uf="+ uf+"&ibge="+ ibge+"&numero="+ numero+"&usuario="+ usuario+"&senha="+ senha+"&nivel_acesso="+ nivel_acesso,
           success: function(mensagem){
             if (mensagem == 1) {
               $("body").overhang({
@@ -296,5 +304,4 @@ document.getElementById('cpf').addEventListener('keydown', function(e) {
     });
   });
 
-})
-//fim do ready
+})//fim do ready

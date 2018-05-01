@@ -28,9 +28,10 @@ if ($action == 'alterar') {
 
     $usuario = $_POST['usuario'];
     $senha = md5($_POST['senha']);
+    $nivelacesso = $_POST['nivel_acesso'];
 
-    $conn->query("UPDATE dados_cadastrais SET nome='$nome', sobrenome='$sobrenome', nascimento='$nascimento', cpf='$cpf', cep='$cep', logradouro='$logradouro', bairro='$bairro', localidade='$localidade', uf='$uf', ibge='$ibge', numero='$numero', usuario='$usuario', senha='$senha'".
-    "WHERE id =$id");
+    $conn->query("UPDATE dados_cadastrais SET nome='$nome', sobrenome='$sobrenome', nascimento='$nascimento', cpf='$cpf', cep='$cep', logradouro='$logradouro', bairro='$bairro', localidade='$localidade', uf='$uf', ibge='$ibge', numero='$numero', usuario='$usuario', senha='$senha',".
+    "nivel_acesso='$nivelacesso' WHERE id =$id");
     $result = $conn->affected_rows; //retorna linhas afetadas
     if ($result == 1) {
       echo $result;
@@ -68,6 +69,17 @@ if ($action == 'alterar') {
     $nivel_acesso = $_POST['permissao'];
 
   $sql = "INSERT INTO dados_cadastrais (nome,sobrenome,nascimento,cpf,cep,logradouro,bairro,localidade,uf,ibge,numero,usuario,senha,nivel_acesso) VALUES ('$nome','$sobrenome','$nascimento','$cpf','$cep','$logradouro','$bairro','$localidade','$uf','$ibge','$numero','$usuario','$senha','$nivel_acesso')";
+  if(mysqli_query($conn, $sql)){
+      echo 1;
+  } else{
+    echo mysqli_error($conn);
+    //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+  }
+}else if ($action == 'inserirObjetivo') {
+  $id = $_POST['id'];
+  $objetivo = $_POST['objetivo'];
+
+  $sql = "INSERT INTO objetivos VALUES ('$id','$objetivo')";
   if(mysqli_query($conn, $sql)){
       echo 1;
   } else{

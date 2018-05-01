@@ -270,6 +270,18 @@ if(isset($_REQUEST['id']))
                     ?>
                     >
                 </div>
+                <div class="col-xs-12 col-sm-4">
+                    <label for="selectform">Tipo:</label>
+                    <select class="form-control" id="permit">
+                      <?php
+                      $result = mysqli_query($conn,"SELECT descricao from permissoes");
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                      <option><?php echo $row['descricao'] ?></option>
+                      <?php
+                        } ?>
+                    </select>
+                </div>
                 <div class="form-group col-md-12 col-xs-12 col-sm-12 col-lg-12">
                     <div class="row col-md-4 col-xs-12 col-lg-4">
                         <input type="button" class="btn btn-default" value="Editar" id="editUser">
