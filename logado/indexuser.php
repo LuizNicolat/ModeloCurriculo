@@ -24,12 +24,16 @@ if($_SESSION['logado'] != 1){
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+		<link href="css/estilologado.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Overhang -->
+		<link type="text/css" rel="stylesheet" href="CSS/overhang.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

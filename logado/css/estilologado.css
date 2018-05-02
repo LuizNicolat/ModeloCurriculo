@@ -1,3 +1,14 @@
 .idhidden{
   display: none;
 }
+
+.objcadas{
+    background: #c3cbd8;
+    /* padding-left: 12px;
+    margin-left: 28px; */
+    border-radius: 4px 4px 4px 4px;
+}
+
+.objdesc{
+  padding-left: 5px;
+}

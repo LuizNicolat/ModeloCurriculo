@@ -76,10 +76,10 @@ if ($action == 'alterar') {
     //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
 }else if ($action == 'inserirObjetivo') {
-  $id = $_POST['id'];
-  $objetivo = $_POST['objetivo'];
+  $id = $_POST['idusuario'];
+  $objetivo = $_POST['textoobjetivo'];
 
-  $sql = "INSERT INTO objetivos VALUES ('$id','$objetivo')";
+  $sql = "INSERT INTO objetivos(idusuario,	objetivo) VALUES ('$id','$objetivo')";
   if(mysqli_query($conn, $sql)){
       echo 1;
   } else{
