@@ -62,7 +62,7 @@ jQuery( "#cadobjetivo" ).click(function() {
   });
 });
 
-// $( ".objcadas" ).hover(function() {
-//     $(".objcadas").css("background-color","#e3e8e8");
-//   }
-// );
+$( "#deletarobj" ).click(function() {
+    alert("Deu");
+  }
+);

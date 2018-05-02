@@ -26,7 +26,7 @@ $iduser = $_SESSION["iduser"];
       ?>
           <div class="form-group col-md-12 col-xs-12 col-lg-12 ">
           <div class="objcadas">
-              <div class="objdesc"><?php echo $row['objetivo'] ?> | <a href="#" id="deletar" class="text-right">Apagar?</a></div>
+              <div class="objdesc"><?php echo $row['objetivo'] ?> | <a href="#" id="deletarobj" class="text-right <?php echo $row['id'] ?>">Apagar?</a></div>
           </div>
           </div>
       <?php

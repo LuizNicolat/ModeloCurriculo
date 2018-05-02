@@ -86,5 +86,19 @@ if ($action == 'alterar') {
     echo mysqli_error($conn);
     //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
-}
+}else if ($action == 'deletarObjetivo') {
+  $id = $_POST['idusuario'];
+  $idobjetivo = $_POST['idobjetivo'];
+
+  //$sql = "DELETE from objetivos where id='$idobjetivo' and idusuario='$id'";
+
+  $conn->query("DELETE from objetivos where id='$idobjetivo' and idusuario='$id'";);
+
+  $result = $conn->affected_rows;
+  if($result == 1)){
+      echo 1;
+  } else{
+    echo mysqli_error($conn);
+    //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+  }
  ?>
