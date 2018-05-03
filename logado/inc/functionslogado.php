@@ -92,13 +92,14 @@ if ($action == 'alterar') {
 
   //$sql = "DELETE from objetivos where id='$idobjetivo' and idusuario='$id'";
 
-  $conn->query("DELETE from objetivos where id='$idobjetivo' and idusuario='$id'";);
+  $conn->query("DELETE from objetivos where id='$idobjetivo' and idusuario='$id'");
 
   $result = $conn->affected_rows;
-  if($result == 1)){
+  if($result == 1){
       echo 1;
   } else{
     echo mysqli_error($conn);
     //echo 0;//"ERROR: Could not able to execute $sql. " . mysqli_error($conn);
   }
+}
  ?>

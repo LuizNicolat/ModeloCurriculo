@@ -179,6 +179,9 @@ if($_SESSION['logado'] != 1){
                           <li>
                               <a href="#">Formação</a>
                           </li>
+													<li>
+                              <a href="indexuser.php?form=experiencias">Experiências</a>
+                          </li>
                           <li>
                               <a href="#">Trocar Senha</a>
                           </li>
@@ -225,6 +228,7 @@ if($_SESSION['logado'] != 1){
 		<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 		<!-- <script src="js/jqueryUI.js"></script> -->
 		<script src="js/scriptsObjetivos.js"></script>
+		<script src="js/scriptsexperiencias.js"></script>
 		<script src="js/buscacep.js"></script>
 		<script src="js/overhang.js"></script>
 		<script src="./js/tradPTBR.js"></script>
